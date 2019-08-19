@@ -34,7 +34,12 @@ export default class App extends React.Component {
       <div>
         <Header />,
         <Form getWeather={this.getWeather} />,
-        <Weather />
+        <Weather
+          temperature={this.state.temperature}
+          city={this.state.city}
+          country={this.state.country}
+          description={this.state.description}
+        />
       </div>
     );
   }
