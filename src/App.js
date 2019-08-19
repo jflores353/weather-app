@@ -18,7 +18,7 @@ export default class App extends React.Component {
     const city = e.target.elements.city.value;
     const country = e.target.elements.country.value;
     const api_call = await fetch(
-      `https://api.openweathermap.org/data/2.5/weathe{r?q=${city},${country}&appid=${API_KEY}`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}`
     );
     const data = await api_call.json();
     console.log(data);
@@ -26,7 +26,8 @@ export default class App extends React.Component {
       temperature: data.main.temp,
       city: data.name,
       country: data.sys.country,
-      description: data.weather[0].description
+      description: data.weather[0].description,
+      error: ""
     });
   };
   render() {
@@ -39,6 +40,7 @@ export default class App extends React.Component {
           city={this.state.city}
           country={this.state.country}
           description={this.state.description}
+          error={this.state.error}
         />
       </div>
     );
