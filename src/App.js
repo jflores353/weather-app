@@ -18,7 +18,6 @@ export default class App extends React.Component {
     const city = e.target.elements.city.value;
     const country = e.target.elements.country.value;
     const api_call = await fetch(
-      // `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}`
       `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}`
     );
     const data = await api_call.json();
@@ -30,6 +29,14 @@ export default class App extends React.Component {
         country: data.sys.country,
         description: data.weather[0].description,
         error: ""
+      });
+    } else {
+      this.setState({
+        temperature: undefined,
+        city: undefined,
+        country: undefined,
+        description: undefined,
+        error: "Please enter City & Country"
       });
     }
   };
