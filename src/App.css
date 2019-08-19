@@ -1,0 +1,52 @@
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #c02425, #f0cb35);
+}
+
+.main-box {
+    display: grid;
+    box-shadow: 0px 13px 40px -13px rgba(0,0,0,0.75);
+    grid-template-columns: 2fr 1fr;
+    height: 90vh;
+    width: 80%;
+}
+
+.image-box {
+    height: 90vh;
+    background: url("./images/nature.jpg") center center no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff
+}
+
+.image-box-content h1 {
+    margin: 10px;
+    font-size: 50px;
+    font-family: Georgia, 'Times New Roman', Times;
+}
+
+.image-box-content p {
+    font-size: 25px;
+}
+
+
+.weather-box {
+    height: 90vh;
+    background: rgb(61, 59, 59);
+    display: flex;
+    flex-direction: column;
+}
+
+/* .weather-content {
+    
+} */
+
+
+
