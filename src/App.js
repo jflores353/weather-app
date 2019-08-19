@@ -42,17 +42,27 @@ export default class App extends React.Component {
   };
   render() {
     return (
-      <div>
-        <Header />,
-        <Form getWeather={this.getWeather} />,
-        <Weather
-          temperature={this.state.temperature}
-          city={this.state.city}
-          country={this.state.country}
-          description={this.state.description}
-          error={this.state.error}
-        />
-      </div>
+      <div className="container">
+        <div className="main-box">
+          <div className="image-box">
+            <Header />
+          </div> {/* image-box end */}
+            <div className="weather-box">
+              <div className="weather-form">
+                <Form getWeather={this.getWeather} />
+              </div>{/* weather-form end */}
+                <div className="weather-info">
+                  <Weather
+                    temperature={this.state.temperature}
+                    city={this.state.city}
+                    country={this.state.country}
+                    description={this.state.description}
+                    error={this.state.error}
+                  />
+                  </div>
+          </div>{/* weather-box end */}
+        </div>
+      </div> 
     );
   }
 }
