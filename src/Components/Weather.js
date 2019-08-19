@@ -1,12 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 class Weather extends Component {
   render() {
-    return (
-      <div>
-        This is the Weather Component
-      </div>
-    )
+    return <div>{this.props.temperature}</div>;
   }
 }
 
