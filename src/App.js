@@ -59,8 +59,8 @@ export default class App extends React.Component {
                     description={this.state.description}
                     error={this.state.error}
                   />
-                  </div>
-          </div>{/* weather-box end */}
+                </div>
+            </div>{/* weather-box end */}
         </div>
       </div> 
     );
