@@ -2,8 +2,10 @@ import React from "react";
 import Header from "./Components/Header";
 import Form from "./Components/Form";
 import Weather from "./Components/Weather";
+const dotenv = require("dotenv");
+dotenv.config();
 
-const API_KEY = "6fb54323d6d6e0e48df0c278f715f04e";
+const API_KEY = process.env.API_KEY;
 
 export default class App extends React.Component {
   state = {
