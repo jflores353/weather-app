@@ -20,7 +20,7 @@ export default class App extends React.Component {
     const city = e.target.elements.city.value;
     const country = e.target.elements.country.value;
     const api_call = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=imperial&appid=6fb54323d6d6e0e48df0c278f715f04e`
     );
     const data = await api_call.json();
     if (city && country) {
@@ -48,23 +48,26 @@ export default class App extends React.Component {
         <div className="main-box">
           <div className="image-box">
             <Header />
-          </div> {/* image-box end */}
-            <div className="weather-box">
-              <div className="weather-form">
-                <Form getWeather={this.getWeather} />
-              </div>{/* weather-form end */}
-                <div className="weather-info">
-                  <Weather
-                    temperature={this.state.temperature}
-                    city={this.state.city}
-                    country={this.state.country}
-                    description={this.state.description}
-                    error={this.state.error}
-                  />
-                </div>
-            </div>{/* weather-box end */}
+          </div>{" "}
+          {/* image-box end */}
+          <div className="weather-box">
+            <div className="weather-form">
+              <Form getWeather={this.getWeather} />
+            </div>
+            {/* weather-form end */}
+            <div className="weather-info">
+              <Weather
+                temperature={this.state.temperature}
+                city={this.state.city}
+                country={this.state.country}
+                description={this.state.description}
+                error={this.state.error}
+              />
+            </div>
+          </div>
+          {/* weather-box end */}
         </div>
-      </div> 
+      </div>
     );
   }
 }
